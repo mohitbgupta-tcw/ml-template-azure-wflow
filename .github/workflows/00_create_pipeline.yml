@@ -5,12 +5,12 @@ on:
       resource_group:
         description: 'Resource group name'
         required: true
-        default: 'rg-dev-mlops' 
+        default: 'AZ-RG-ML-SHARED-DEV-002' 
         type: string
       aml_workspace:
         description: 'Azure Machine Learning workspace name'
         required: true
-        default: 'mlw-dev-mlops' 
+        default: 'demoAzMLWorkspace' 
         type: string
 
 jobs:
@@ -31,6 +31,6 @@ jobs:
         az configure --defaults workspace="${{ github.event.inputs.aml_workspace }}"
     - name: Create pipeline in Azure ML workspace
       run: |
-        cd src
+        cd code
         az ml job create --file job.yml --resource-group "${{github.event.inputs.resource_group}}" --workspace-name "${{github.event.inputs.aml_workspace}}"
 
