@@ -4,7 +4,7 @@ display_name: hello_pipeline_abc
 compute: azureml:githubcluster
   
 inputs:
-  hello_string_top_level_input: "hello world !!~"
+  hello_string_top_level_input: "hello world2222 !!~"
 jobs:
   a:
     command: echo hello ${{inputs.hello_string}}
