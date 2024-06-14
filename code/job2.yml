@@ -7,7 +7,7 @@ inputs:
   kernel_top_level_input: "linear"
   penalty_top_level_input: 1.0
 jobs:
-  RunTrain:
+  a:
     code: train
     command: >-
       python train.py
