@@ -10,6 +10,7 @@ from sklearn import datasets
 from sklearn.svm import SVC
 from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score
 from sklearn.model_selection import train_test_split
+from datetime import date
 
 from azureml.core import Dataset, Run
 run = Run.get_context()
@@ -126,5 +127,7 @@ def parse_args():
 
 
 if __name__ == '__main__':
-    args = parse_args()
-    main(args=args)
+    today = date.today()
+    print("Today's date:", today)
+    #args = parse_args()
+    #main(args=args)
