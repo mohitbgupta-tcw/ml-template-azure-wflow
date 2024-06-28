@@ -9,6 +9,7 @@ inputs:
 jobs:
   a:
     code: train
+    
     command: >-
       python train.py
       --kernel ${{inputs.kernel}}
@@ -18,5 +19,7 @@ jobs:
       penalty: ${{parent.inputs.penalty_top_level_input}}
     environment: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu@latest
     description: This pipeline job is created from cli  
+    schedule:
+      cron: "0 * * * *"    
 
 
