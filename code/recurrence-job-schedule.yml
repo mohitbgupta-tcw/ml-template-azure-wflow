@@ -8,18 +8,10 @@ trigger:
   frequency: day #can be minute, hour, day, week, month
   interval: 1 #every day
   schedule:
-    hours: [4,5,10,11,12]
+    hours: [4,5,9,11,12]
     minutes: [0,30]
   start_time: "2022-07-10T10:00:00" # optional - default will be schedule creation time
   time_zone: "Pacific Standard Time" # optional - default will be UTC
 
-create_job: 
-  type: pipeline
-  job: ./job2.yml
-  # job: azureml:simple-pipeline-job
-  # runtime settings
-
-  inputs:
-    kernel_top_level_input: "linear" 
-
+create_job: ./job2.yml
 # create_job: azureml:simple-pipeline-job
